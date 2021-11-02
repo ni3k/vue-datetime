@@ -7648,8 +7648,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 /*!
- * vue-datetime v1.0.0-beta.14
- * (c) 2020 Mario Juárez
+ * vue-datetime v1.0.0-beta.13
+ * (c) 2021 Mario Juárez
  * Released under the MIT License.
  */
 
@@ -8615,7 +8615,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     window.Vue.use(plugin);
   }
 
-  var version = '1.0.0-beta.14';
+  var version = '1.0.0-beta.13';
 
   exports['default'] = plugin;
   exports.Datetime = Datetime;
