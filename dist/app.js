@@ -8352,7 +8352,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       },
       goToToday: function goToToday() {
         console.log(luxon.DateTime.local());
-        this.newDatetime = this.newDatetime.set(luxon.DateTime.local());
+        this.newDatetime = luxon.DateTime.local();
       },
       showYear: function showYear() {
         this.step = 'year';
