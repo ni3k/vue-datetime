@@ -7926,10 +7926,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       findMonth: function findMonth(month) {
         console.log({ month: month });
         console.log(this.months.find(function (m) {
-          return m.label === month;
+          return m.number === month;
         }));
         return this.months.find(function (m) {
-          return m.label === month;
+          return m.number === month;
         });
       },
       previousMonth: function previousMonth() {
