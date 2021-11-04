@@ -7920,7 +7920,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       handleSelectMonth: function handleSelectMonth(event) {
         console.log({ e: event.target.value });
         var number = event.target.value;
-        var month = this.findMonth(number);
+        var month = this.findMonth(+number);
 
         if (month.disabled) {
           return;
