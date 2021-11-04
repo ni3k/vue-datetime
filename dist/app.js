@@ -8342,7 +8342,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         var year = ref.year;
         var month = ref.month;
         var day = ref.day;
-        return monthDayIsDisabled(this.minTime, this.maxTime, year, month, day);
+        return monthDayIsDisabled(this.minDatetime, this.maxDatetime, year, month, day);
       }
     },
 
