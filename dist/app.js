@@ -7886,8 +7886,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             selected: index === this$1.month,
             disabled: !index || monthIsDisabled(this$1.minDate, this$1.maxDate, this$1.year, index)
           };
-        }).filter(function (item) {
-          return !item.disabled;
         });
       },
       years: function years$1() {
@@ -7898,8 +7896,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             year: year,
             disabled: yearIsDisabled(this$1.minDate, this$1.maxDate, year)
           };
-        }).filter(function (item) {
-          return !item.disabled;
         });
       },
       newYear: function newYear() {
