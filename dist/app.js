@@ -7932,7 +7932,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         this.$emit('change', this.newYear, this.newMonth, day.number);
       },
       handleShowMonth: function handleShowMonth() {
-        this.$emit('handleShowMonth');
+        this.$emit('showMonth');
       },
       findMonth: function findMonth(month) {
         console.log(month);
