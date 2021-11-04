@@ -7917,8 +7917,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
         this.$emit('change', this.newYear, this.newMonth, day.number);
       },
-      handleSelectMonth: function handleSelectMonth(month) {
-        console.log({ month: month });
+      handleSelectMonth: function handleSelectMonth(event) {
+        var month = event.target.value;
         if (month.disabled) {
           return;
         }
