@@ -1,6 +1,6 @@
 {
-  "name": "vue-datetime",
-  "version": "1.0.0-elnino-01",
+  "name": "@ni3k/vue-datetime",
+  "version": "1.0.0-elnino.1",
   "description": "Mobile friendly datetime picker for Vue. Supports date, datetime and time modes, i18n and disabling dates.",
   "keywords": [
     "datetime",
@@ -144,14 +144,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ni3k/vue-datetime.git"
+    "url": "https://github.com/ni3k/vue-datetime.git"
   },
   "bugs": {
     "url": "https://github.com/mariomka/vue-datetime/issues"
   },
-  "homepage": "https://github.com/mariomka/vue-datetime#readme",
-  "license": {
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/mit-license.php"
-  }
+  "homepage": "https://github.com/mariomka/vue-datetime#readme"
 }

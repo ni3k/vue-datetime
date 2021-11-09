@@ -16,10 +16,12 @@ exports.write = require('./write')
 
 const {
   author,
-  name,
   version,
   dllPlugin
 } = require('../../package.json')
+
+// hardcode the name for now
+const name = 'vue-datetime'
 
 const authorName = author.replace(/\s+<.*/, '')
 const minExt = process.env.NODE_ENV === 'production' ? '.min' : ''
