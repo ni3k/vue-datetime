@@ -1,6 +1,6 @@
 {
   "name": "vue-datetime",
-  "version": "1.0.0-beta.13",
+  "version": "1.0.0-elnino-01",
   "description": "Mobile friendly datetime picker for Vue. Supports date, datetime and time modes, i18n and disabling dates.",
   "keywords": [
     "datetime",
@@ -38,6 +38,9 @@
     "version": "auto-changelog -p --starting-commit 975d478b80b8e1ed3663f55b34c3a35521a43bdb --commit-limit false && git add CHANGELOG.md",
     "prepublish": "yon run build && yon run demo:build",
     "postpublish": "yon run demo:deploy"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   },
   "lint-staged": {
     "*.{vue,js}": [
@@ -141,7 +144,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mariomka/vue-datetime.git"
+    "url": "git+https://github.com/ni3k/vue-datetime.git"
   },
   "bugs": {
     "url": "https://github.com/mariomka/vue-datetime/issues"
