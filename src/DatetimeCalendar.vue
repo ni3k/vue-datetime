@@ -6,7 +6,14 @@
           <path fill="none" stroke="#444" stroke-width="14" stroke-miterlimit="10" d="M56.3 97.8L9.9 51.4 56.3 5"/>
         </svg>
       </div>
-      <div class="vdatetime-calendar__current--month">{{ monthName }} {{ newYear }}</div>
+      <div class="vdatetime-calendar--second-navigation">
+        <select class="vdatetime-calendar-select vdatetime-calendar-select--month" @mousedown.prevent="handleShowMonth">
+          <option :value="monthName">{{monthName}}</option>
+        </select>
+        <select class="vdatetime-calendar-select vdatetime-calendar-select--year" @mousedown.prevent="handleShowYear">
+          <option :value="newYear">{{newYear}}</option>
+        </select>  
+      </div>
       <div class="vdatetime-calendar__navigation--next" @click="nextMonth">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61.3 102.8">
           <path fill="none" stroke="#444" stroke-width="14" stroke-miterlimit="10" d="M56.3 97.8L9.9 51.4 56.3 5"/>
@@ -91,6 +98,18 @@ export default {
       }
 
       this.$emit('change', this.newYear, this.newMonth, day.number)
+    },
+    handleShowMonth () {
+      this.$emit('showMonth')
+    },
+    handleShowYear () {
+      this.$emit('showYear')
+    },
+    handleReset () {
+      // wait to compute mont, day and year
+      this.$nextTick(() => {
+        this.newDate = this.newDate.set({ month: this.month, day: this.day, year: this.year })
+      })
     },
     previousMonth () {
       this.newDate = this.newDate.minus({ months: 1 })

@@ -20,7 +20,10 @@
           :year="year"
           :month="month"></datetime-month-picker>
       <datetime-calendar
+          ref="calendar"
           v-if="step === 'date'"
+          @showYear="showYear"
+          @showMonth="showMonth"
           @change="onChangeDate"
           :year="year"
           :month="month"
@@ -40,9 +43,12 @@
           :min-time="minTime"
           :max-time="maxTime"></datetime-time-picker>
     </div>
-    <div class="vdatetime-popup__actions">
+    <div class="vdatetime-popup__actions" :class="{'vdatetime-popup__actions--end': step !== 'date' }">
       <div class="vdatetime-popup__actions__button vdatetime-popup__actions__button--cancel" @click="cancel">
         <slot name="button-cancel__internal" v-bind:step="step">{{ phrases.cancel }}</slot>
+      </div>
+      <div v-if="step === 'date'" class="vdatetime-popup__actions__button vdatetime-popup__actions__button--today" :disabled="isTodayDisabled" @click="goToToday">
+        <slot name="button-today__internal">skip to today </slot>
       </div>
       <div class="vdatetime-popup__actions__button vdatetime-popup__actions__button--confirm" @click="confirm">
         <slot name="button-confirm__internal" v-bind:step="step">{{ phrases.ok }}</slot>
@@ -53,7 +59,7 @@
 
 <script>
 import { DateTime } from 'luxon'
-import { createFlowManager, createFlowManagerFromType } from './util'
+import { createFlowManager, createFlowManagerFromType, monthDayIsDisabled } from './util'
 import DatetimeCalendar from './DatetimeCalendar'
 import DatetimeTimePicker from './DatetimeTimePicker'
 import DatetimeYearPicker from './DatetimeYearPicker'
@@ -183,6 +189,10 @@ export default {
         this.maxDatetime.month === this.month &&
         this.maxDatetime.day === this.day
       ) ? this.maxDatetime.toFormat('HH:mm') : null
+    },
+    isTodayDisabled () {
+      const { year, month, day } = DateTime.local()
+      return monthDayIsDisabled(this.minDatetime, this.maxDatetime, year, month, day)
     }
   },
 
@@ -194,6 +204,11 @@ export default {
       if (this.step === 'end') {
         this.$emit('confirm', this.newDatetime)
       }
+    },
+    goToToday () {
+      const { year, month, day, hour, minute } = DateTime.local()
+      this.newDatetime = this.newDatetime.set({ year, month, day, hour, minute })
+      this.$refs.calendar.handleReset()
     },
     showYear () {
       this.step = 'year'

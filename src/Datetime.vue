@@ -38,6 +38,9 @@
         <template slot="button-confirm__internal" slot-scope="scope">
           <slot name="button-confirm" v-bind:step="scope.step">{{ phrases.ok }}</slot>
         </template>
+        <template slot="button-today__internal" slot-scope="scope">
+          <slot name="button-today" v-bind:step="scope.step">skip to today</slot>
+        </template>
       </datetime-popup>
     </transition-group>
   </div>
