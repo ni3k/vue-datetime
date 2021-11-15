@@ -8123,7 +8123,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       scrollToCurrent: function scrollToCurrent() {
         if (this.$refs.yearList) {
           var selectedYear = this.$refs.yearList.querySelector('.vdatetime-year-picker__item--selected');
-          this.$refs.yearList.scrollTop = selectedYear ? selectedYear.offsetTop - 150 : 0;
+          this.$refs.yearList.scrollTop = selectedYear ? selectedYear.offsetTop - 200 : 0;
         }
       }
     },
