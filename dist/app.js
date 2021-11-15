@@ -8352,7 +8352,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         var hour = ref.hour;
         var minute = ref.minute;
         if (luxon.DateTime.local().startOf('day') === this.newDatetime.startOf('day')) {
-          this.$refs.calendar.handlePulse();
+          this.$refs.calendar.handlePulseClass();
         }
         this.newDatetime = this.newDatetime.set({ year: year, month: month, day: day, hour: hour, minute: minute });
         this.$refs.calendar.handleReset();
