@@ -7776,6 +7776,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     });
   }
 
+  function years(current) {
+    return Array.apply(null, Array(201)).map(function (item, index) {
+      return current - 100 + index;
+    });
+  }
+
   function pad(number) {
     return number < 10 ? '0' + number : number;
   }
@@ -8090,18 +8096,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     },
 
     computed: {
-      years: function years$$1() {
+      years: function years$1() {
         var this$1 = this;
 
-        var years$$1 = years$$1(this.year).map(function (year) {
+        var yearss = years(this.year).map(function (year) {
           return {
             number: year,
             selected: year === this$1.year,
             disabled: !year || yearIsDisabled(this$1.minDate, this$1.maxDate, year)
           };
         });
-        console.log({ years: years$$1, y: this.year });
-        return years$$1;
+        console.log({ yearss: yearss, y: this.year });
+        return yearss;
       }
     },
 
