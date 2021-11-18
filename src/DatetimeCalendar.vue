@@ -20,7 +20,7 @@
         </svg>
       </div>
     </div>
-    <div class="vdatetime-calendar__month">
+    <div ref="calendarMonth" class="vdatetime-calendar__month">
       <div class="vdatetime-calendar__month__weekday" v-for="weekday in weekdays">{{ weekday }}</div>
       <div class="vdatetime-calendar__month__day" v-for="day in days" @click="selectDay(day)" :class="{'vdatetime-calendar__month__day--selected': day.selected, 'vdatetime-calendar__month__day--disabled': day.disabled}">
         <span><span>{{ day.number }}</span></span>
@@ -104,6 +104,13 @@ export default {
     },
     handleShowYear () {
       this.$emit('showYear')
+    },
+    handlePulseClass () {
+      const selectedDay = this.$refs.calendarMonth.querySelector('.vdatetime-calendar__month__day--selected')
+      selectedDay.classList.add('vdatetime-calendar__month__day--pulse')
+      setTimeout(() => {
+        selectedDay.classList.remove('vdatetime-calendar__month__day--pulse')
+      }, 200)
     },
     handleReset () {
       // wait to compute mont, day and year

@@ -207,6 +207,9 @@ export default {
     },
     goToToday () {
       const { year, month, day, hour, minute } = DateTime.local()
+      if (DateTime.local().startOf('day').equals(this.newDatetime.startOf('day'))) {
+        this.$refs.calendar.handlePulseClass()
+      }
       this.newDatetime = this.newDatetime.set({ year, month, day, hour, minute })
       this.$refs.calendar.handleReset()
     },

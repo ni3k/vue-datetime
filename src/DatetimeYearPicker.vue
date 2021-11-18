@@ -49,7 +49,7 @@ export default {
     scrollToCurrent () {
       if (this.$refs.yearList) {
         const selectedYear = this.$refs.yearList.querySelector('.vdatetime-year-picker__item--selected')
-        this.$refs.yearList.scrollTop = selectedYear ? selectedYear.offsetTop - 250 : 0
+        this.$refs.yearList.scrollTop = selectedYear ? selectedYear.offsetTop - 200 : 0
       }
     }
   },
